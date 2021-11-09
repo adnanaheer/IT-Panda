@@ -1,0 +1,20 @@
+.AboutUs{
+    background: linear-gradient(rgb(67, 145, 228), rgba(172, 226, 223, 0)), url('/../../assets/images/aboutusbanner.jpg') center/cover fixed no-repeat;
+}
+
+.member1{
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('/../../assets/images/member1.jpg')  center/cover no-repeat;
+}
+
+.member2{
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('/../../assets/images/member2.png') center/cover  no-repeat;
+}
+
+.partner{
+    background: linear-gradient(rgb(255, 255, 255), rgba(224, 245, 244, 0)), url('/../../assets/images/partner.jpg') center/cover fixed no-repeat;
+}
+
+.btn-radius:hover{
+    transform: scale(1.09);
+    transition: 0.5s all linear;
+}

@@ -1,0 +1,48 @@
+nav{
+    color: whitesmoke;
+    box-shadow: 2px 2px 2px rgb(228, 228, 228);
+}
+
+.sub-menu-1{
+    display: none;
+}
+
+.fa-angle-right{
+    color: black;
+    float: right;
+}
+
+.menu-bar ul li:hover .sub-menu-1{
+    display: block;
+    position: absolute;
+    background: url('https://i.pinimg.com/originals/f2/0a/ee/f20aee4870e602cd95ecd99d87c81ef3.jpg') center/cover no-repeat;
+}
+
+.menu-bar ul li:hover .sub-menu-1 ul{
+    margin-right: 24px;
+}
+
+.menu-bar ul li:hover .sub-menu-1 li{
+    width: 182px;
+    padding: 10px;
+    border-bottom: 1px dotted black;
+    background: transparent;
+    border-radius: 0;
+}
+
+.menu-bar ul li:hover .sub-menu-1 li:last-child{
+    border-bottom: none;
+}
+
+.sub-menu-2{
+    display: none;
+}
+
+.hover-me:hover .sub-menu-2{
+    position: absolute;
+    display: block;
+    margin-top: -35px;
+    margin-left: 174px;
+    background: url('https://i.pinimg.com/originals/f2/0a/ee/f20aee4870e602cd95ecd99d87c81ef3.jpg') center/cover no-repeat;
+}
+
