@@ -38,6 +38,13 @@ nav{
     display: none;
 }
 
+.text-color{
+    color: #6c757d;
+}
+.text-color:hover{
+color: #0dcaf0 ;
+}
+
 .hover-me:hover .sub-menu-2{
     position: absolute;
     display: block;
