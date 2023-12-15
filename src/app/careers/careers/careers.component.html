@@ -7,13 +7,48 @@
     <section>
         <div class="alignment my-3">
            <h3 class="text-gradient"> Our Recruitment Process </h3>
-        <div class="recruitment">
-                <div class="img"><img src="../../../assets/images/apply-now.jpg" alt=""><span>Apply For The Position</span></div> 
-                <div class="img"><img src="../../../assets/images/shortlisted.jpg" alt=""><span>Shortlisted Candidate</span></div>
-                <div class="img"><img src="../../../assets/images/interview.jpg" alt=""><span>Interview with HR</span></div>
-                <div class="img"><img src="../../../assets/images/selected-candidate.jpg" alt=""><span>Get Selected</span></div>
-                <div class="img"><img src="../../../assets/images/welcome-team.jpg" alt=""><span>Hired</span></div>
+        <div class="recruitment d-none d-md-flex d-xl-flex">
+                <div class="img"><img class="img-fluid" src="../../../assets/images/apply-now.jpg" alt=""><span class="text-center mt-3">Apply For <br> Position</span></div> 
+                <div class="img"><img class="img-fluid" src="../../../assets/images/shortlisted.jpg" alt=""><span class="text-center mt-3">Shortlisted <br> Candidate</span></div>
+                <div class="img"><img class="img-fluid" src="../../../assets/images/interview.jpg" alt=""><span class="text-center">Interview with assessment panel</span></div>
+                <div class="img"><img class="img-fluid" src="../../../assets/images/selected-candidate.jpg" alt=""><span class="text-center">Selected or pooled for future roles </span></div>
+                <div class="img"><img class="img-fluid" src="../../../assets/images/welcome-team.jpg" alt=""><span class="text-center">Welcome aboard! You're hired!</span></div>
         </div>
+        <div class="d-md-none d-xl-none">
+            <div class="row mobile-recruitment">
+                <div class="img"><img class="img-fluid" src="../../../assets/images/apply-now.jpg" alt=""><span class="text-center ">Apply For <br> Position</span></div> 
+                <div class="img"><img class="img-fluid" src="../../../assets/images/shortlisted.jpg" alt=""><span class="text-center ">Shortlisted <br> Candidate</span></div>
+                <div class="img"><img class="img-fluid" src="../../../assets/images/interview.jpg" alt=""><span class="text-center">Interview with assessment panel</span></div>
+            </div>
+            <div class="row mobile-recruitment">
+                <div class="img"><img class="img-fluid" src="../../../assets/images/selected-candidate.jpg" alt=""><span class="text-center">Selected or pooled for future roles </span></div>
+                <div class="img"><img class="img-fluid" src="../../../assets/images/welcome-team.jpg" alt=""><span class="text-center">Welcome aboard! You're hired!</span></div>
+            </div>
+        </div>
+        </div>
+    </section>
+    <section>
+        <div class="alignment my-4">
+            <h3 class="text-gradient"> Open Positions</h3>
+            <div class="card-group">
+                <div *ngFor="let category of jobCategories" class="card">
+                    <div class="card-body">
+                      <h5 class="card-title">{{ category.name }}</h5>
+                      <div class="card-text">
+                        <ul>
+                          <li *ngFor="let item of category.displayedItems">
+                            {{ item }}
+                          </li>
+                          <a *ngIf="category.remainingItems.length > 0" (click)="showMore(category)">Show More.....</a>
+                        </ul>
+                      </div>
+                      <button>APPLY NOW</button>
+                    </div>
+                    <div class="card-footer">
+                      <small class="text-muted">Last updated recent</small>
+                    </div>
+                  </div>        
+              </div>
         </div>
     </section>
     <footer>
