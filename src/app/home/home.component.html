@@ -1,7 +1,7 @@
 <div> 
     <!-- section 1 -->
     <section >
-        <img src="../../assets/images/Angular Web Banner 21.jpg"  width="100%" height="auto" alt="">
+        <img src="../../assets/images/itPanda-webBanner.jpg"  width="100%" height="auto" alt="">
     </section>
       <!-- section 1 End -->
     
@@ -31,30 +31,19 @@
                         </li>
                         <li class="pb-3">
                             <img src="../../assets/icons/web design Icon.png" height="45px" width="45px" class="img-fluid px-1" alt="">
-                            Website Designing
+                            UI Designing
                         </li>
-                        <li>
-                            <img src="../../assets/icons/Digital Marketing.png" height="45px" width="45px" class="img-fluid px-1" alt="">
-                            Digital Marketing
-                        </li>
+                       
                     </ul>
 
                     <ul class="list-unstyled col-12 col-md-6 col-lg-6 col-xl-6 mx-auto">
                         <li class="pb-3">
-                            <img src="../../assets/icons/erp1.png" height="45px" width="45px" class="img-fluid px-1" alt="">
-                            ERP
-                        </li>
+                            <img src="../../assets/icons/Digital Marketing.png" height="45px" width="45px" class="img-fluid px-1" alt="">
+                            Digital Marketing
+                        </li> 
                         <li class="pb-3">
                             <img src="../../assets/icons/Landing Page.png" height="45px" width="45px" class="img-fluid px-1" alt="">
                             Landing Pages
-                        </li>
-                        <li class="pb-3">
-                            <img src="../../assets/icons/mobile App icon.png" height="45px" width="45px" class="img-fluid px-1" alt="">
-                            Mob App Development
-                        </li>
-                        <li class="pb-3">
-                            <img src="../../assets/icons/CMS Website.png" height="45px" width="45px" class="img-fluid px-1" alt="">
-                            CMS Websites
                         </li>
                         <li>
                             <img src="../../assets/icons/Graphic Design Icon.png" height="45px" width="45px" class="img-fluid px-1" alt="">
@@ -65,7 +54,7 @@
             </div>
     
             <div class="col-12 mx-auto col-md-8 col-lg-5">
-                <img src="../../assets/images/heroimg1.jpg"  class="img-fluid" alt="">
+                <!-- <img src="../../assets/images/heroimg1.jpg"  class="img-fluid" alt=""> -->
             </div>
         </div>
     </section>
@@ -101,44 +90,16 @@
                 </div>
     
                 <div class="col-11 col-md-4 col-lg-4 mx-auto d-flex flex-column py-2">
-                    <div class=" text-center text-white bg-dark py-5  px-3 radius">
+                    <div class=" text-center text-white bg-dark py-5 px-3 radius">
                         <img src="../../assets/icons/web design Icon.png" height="45px" width="45px" class="img-fluid pb-2" alt="">
-                        <h4><a href="#" routerLink="/service/websitedesign">Website Designing</a></h4>
-                        <p>Website design is the act of designing and creating websites, and becoming a model art form.</p>
+                        <h4><a href="#" routerLink="/service/websitedesign">UI Designing</a></h4>
+                        <p>UI design is the act of designing and creating websites, and becoming a model art form.</p>
                         <a href="#" class="text-primary no-underline" routerLink="/service/websitedesign">See More <i class="fa fa-chevron-right"></i></a>
                     </div>
                 </div>
             </div>
     
-            <div class="row">
-                <div class="col-11 col-md-4 col-lg-4 mx-auto d-flex flex-column py-2">
-                    <div class=" text-center text-white bg-dark py-5 px-3 radius cards">
-                        <img src="../../assets/icons/Digital Marketing.png" height="45px" width="45px" class="img-fluid pb-2" alt="">
-                        <h4><a href="#" routerLink="/service/digitalmarket">Digital Marketing</a></h4>
-                        <p>Digital marketing is the act of promoting and selling products and services.</p>
-                        <a href="" class="text-primary no-underline" routerLink="/service/digitalmarket">See More <i class="fa fa-chevron-right"></i></a>
-                    </div>
-                </div>
-    
-                <div class="col-11 col-md-4 col-lg-4 mx-auto d-flex flex-column py-2">
-                    <div class=" text-center text-white bg-dark py-5 px-3 radius cards">
-                        <img src="../../assets/icons/Software Development.png" height="45px" width="45px" class="img-fluid pb-2" alt="">
-                        <h4><a href="#" routerLink="/service/softwaredevelopment">Software Development</a></h4>
-                        <p>It is a frame work used to plan, control and structure the process of developing.</p>
-                        <a href="" class="text-primary no-underline" routerLink="/service/softwaredevelopment">See More <i class="fa fa-chevron-right"></i></a>
-                    </div>
-                </div>
-                <div class="col-11 col-md-4 col-lg-4 mx-auto d-flex flex-column py-2">
-                    <div class=" text-center text-white bg-dark py-5 px-3 radius cards">
-                        <img src="../../assets/icons/mobile App icon.png" height="45px" width="45px" class="img-fluid pb-2" alt="">
-                        <h4><a href="#" routerLink="/service/mobileapplicationdevelopment">Mobile Application Development</a></h4>
-                        <p>Mobile app development is the act or process by which a mobile app..</p>
-                        <a href="" class="text-primary no-underline" routerLink="/service/mobileapplicationdevelopment">See More <i class="fa fa-chevron-right"></i></a>
-                    </div>
-                </div>
-            </div>
-    
-            <h6 class="text-center text-white py-5">Can't decide? Don't hesitate to <a href="#" routerLink="/service"> View More <i class="fas fa-chevron-right"></i></a></h6>
+            <h6 class="text-center text-white py-5"><a href="#" routerLink="/service"> View More <i class="fas fa-chevron-right"></i></a></h6>
         </div>
     </section>
      <!-- section 3 End-->
@@ -153,7 +114,7 @@
          <div class="d-flex justify-content-center flex-wrap pb-2">
             <button (click)="activeSection = 'mainport1'" [ngClass]="activeSection === 'mainport1' ? 'active' : ''" class="btn btn-outline-primary px-3 p-2 m-1 btnradius">ANGULAR PROJECTS</button>
             <button (click)="activeSection = 'mainport2'" [ngClass]="activeSection === 'mainport2' ? 'active' : ''" class="btn btn-outline-primary px-3 m-1 p-2 btnradius">REACT PROJECT</button>
-            <button (click)="activeSection = 'mainport3'" [ngClass]="activeSection === 'mainport3' ? 'active' : ''" class="btn btn-outline-primary px-3 p-2 m-1 btnradius">WEBSITE DESIGN</button>
+            <button (click)="activeSection = 'mainport3'" [ngClass]="activeSection === 'mainport3' ? 'active' : ''" class="btn btn-outline-primary px-3 p-2 m-1 btnradius">UI DESIGN</button>
             <button (click)="activeSection = 'mainport4'" [ngClass]="activeSection === 'mainport4' ? 'active' : ''" class="btn btn-outline-primary m-1 px-3 p-2 btnradius">OTHER WORK</button>  
         </div>
         <ng-container *ngIf="activeSection === 'mainport1'">
@@ -220,7 +181,7 @@
                                       <mat-option value="one">Landing Page</mat-option>
                                       <mat-option value="two">Mob Application Development</mat-option>
                                       <mat-option value="one">Software Development</mat-option>
-                                      <mat-option value="two">Website Designing</mat-option>
+                                      <mat-option value="two">UI Designing</mat-option>
                                     </mat-select>
                                   </mat-form-field>
                                 </div>
