@@ -1,3 +1,7 @@
+.cdk-overlay-container {
+    position: fixed;
+    z-index: 10000;
+}
 .alignment{
     display: flex;
     flex-direction: column;
@@ -73,11 +77,59 @@ h3 {
         background-clip: text;
         color: transparent;
     }
-    button{
+    a{
+        color: blue;
+        cursor: pointer;
+    }
+  
+}
+button{
+    border-radius: 20px;
+    background: linear-gradient(rgb(55, 52, 52), rgb(7, 121, 243));
+    border: none;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+button:hover{
+    background: gray;
+}
+.modal-body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 50px;
+    
+    form{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        width: 100%;
+        
+        .fields{
+            display: flex;
+            width: 100%;
+        }
+        .fields label, .fields input, .fields select {
+            width: 50%;
+        }
+        
+    }
+    .form-control{
         border-radius: 20px;
+    }
+    .close{
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-end;
+        width: 100%;
+    }
+    h3{
         background: linear-gradient(rgb(55, 52, 52), rgb(7, 121, 243));
-        border: none;
-        color: white;
+        background-clip: text;
+        color: transparent;
     }
 }
 @media only screen and (min-width:768px) and (max-width:1200px) {

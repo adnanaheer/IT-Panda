@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { NgbModalRef, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { career } from 'src/app/service.ts/career';
 interface JobCategory {
   name: string;
   items: string[];
@@ -16,41 +18,73 @@ export class CareersComponent implements OnInit {
   isCollapsed: boolean;
   jobCategories: JobCategory[] = [];
   wordsLimit = 30;
-
-  constructor() {}
+  category: string
+  email: string
+  modalRef: NgbModalRef;
+  selectedFile: File | null = null;
+  @ViewChild('exampleModalCenter') applyNow: any;
+  @ViewChild('cvForm') cvForm : NgForm  
+  constructor(public modal : NgbModal, private career: career ) {}
 
   ngOnInit(): void {
     this.jobCategories = [
       {
-        name: 'BackEnd',
+        name: 'Back-End Developer',
         items: [
-          'Develop server-side logic using Node.js to handle requests from the frontend.',
-          'Use Express.js, a popular Node.js web application framework, to build robust and scalable APIs.',
-          'Work with various databases, such as MongoDB, MySQL, or PostgreSQL, to store and retrieve data',
-          'Develop and execute unit tests, integration tests, and end-to-end tests to ensure the reliability of the backend code'
+          'Writing server-side code using programming languages such as Python, Java, Ruby, PHP, Node.js',
+          'Designing, implementing, and maintaining databases (e.g., MySQL, PostgreSQL, MongoDB)',
+          'Integrating external services, APIs, and third-party components',
+          'Develop and execute unit tests, integration tests, and end-to-end tests to ensure the reliability of the backend code',
+          'Working closely with frontend developers, designers, and other stakeholders'
         ],
         displayedItems: [],
         remainingItems: []
       },
       {
-        name: 'FrontEnd',
+        name: 'Front-End Developer',
         items: [
-          'Utilize Angular components, directives, services, and modules to structure and organize the application',
-          'Ensure consistent and pixel-perfect implementation of the design across different browsers and devices',
-          'Create and handle forms using Angulars form handling features, including template-driven and reactive forms',
-          'Integrate frontend code with backend services and APIs by making HTTP requests and handling responses using Angulars HttpClient module'
+          'Proficiency in HTML, CSS, and JavaScript is essential. These are the core technologies used to create the structure, style, and interactivity of web pages.',
+          'Familiarity with frontend frameworks and libraries such as React, Angular, or Vue.js',
+          'Collaborating with UI/UX designers to implement visually appealing and user-friendly interfaces.',
+          'Using version control systems, such as Git'
         ],
         displayedItems: [],
         remainingItems: []
       },
       {
-        name: 'Graphic',
+        name: 'Graphic Designer',
         items: [
           'Collaborate with clients or stakeholders to understand the goals, objectives, and requirements of a project',
           'Design logos, brand elements, and visual identities that represent and reinforce the brand`s image and values',
           'Work on the design of user interfaces for websites, applications, or software, focusing on usability and user experience.',
           'Manage multiple projects and deadlines efficiently, ensuring timely delivery of high-quality designs'
         ],
+        displayedItems: [],
+        remainingItems: []
+      },
+      {
+        name: 'Node.Js Developer',
+        items: [
+          'Expert in database architecture and creating RestFull API using Node.JS',
+          'Design and build core frameworks on Node.JS, shared services, NPM packages, and RESTful /socket APIs.',
+          'Expert in developing strong and powerful backend with complex features using MEAN or MERN.',
+          'Translates complex requirements into an easy to understand user experience by following the user-centered design process.',
+          'Experience with source/version control systems such as GIT.'
+        ],
+        displayedItems: [],
+        remainingItems: []
+      },
+      {
+        name: 'MEAN Stack Developer',
+        items: [
+          'Develop and maintain web applications using the MEAN stack (MongoDB, Express.js, Angular, Node.js).',
+          'Collaborate with cross-functional teams to design, develop, and implement new features and enhancements.',
+          'Write high-quality, clean, maintainable code, and participate in code reviews.',
+          'Design and implement scalable and secure RESTful APIs.',
+          'Work closely with front-end developers to integrate user-facing elements with server-side logic.',
+          'Troubleshoot, debug, and resolve software defects and issues.',
+          'Keep up-to-date with emerging technologies and industry trends.'        
+            ],
         displayedItems: [],
         remainingItems: []
       }
@@ -81,5 +115,33 @@ export class CareersComponent implements OnInit {
 
   calculateWordCount(input: string): number {
     return input.split(/\s+/).length;
+  }
+
+  openForm() {
+   this.modalRef= this.modal.open(this.applyNow,{
+      animation: true,
+      centered: true,
+      size: 'md'
+    })
+  }
+
+  submit(f: NgForm){
+   if(f.valid && this.selectedFile){
+    console.log(this.category, this.email, this.selectedFile)
+    const formData = new FormData();
+      formData.append('email', this.email);
+      formData.append('category', this.category);
+      formData.append('attachment', this.selectedFile);
+    this.career.dropCv(formData).subscribe(
+      res => console.log(res)
+    )
+   }
+  }
+  fileUpdated(event: any){
+    const inputElement = event.target;
+    if (inputElement.files && inputElement.files.length > 0) {
+      this.selectedFile = inputElement.files[0];
+      console.log('Selected File:', this.selectedFile);
+    }
   }
 }

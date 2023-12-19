@@ -42,6 +42,8 @@ import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import {MatSelectModule} from '@angular/material/select';
 import { CareersComponent } from './careers/careers/careers.component';
+import { FormsModule } from '@angular/forms'; 
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -84,6 +86,8 @@ import { CareersComponent } from './careers/careers/careers.component';
     CareersComponent,
   ],
   imports: [
+    HttpClientModule,
+    FormsModule,
     MatSelectModule,
     MatButtonModule,
     MatInputModule,

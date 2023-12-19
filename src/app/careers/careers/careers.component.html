@@ -33,7 +33,7 @@
             <div class="card-group">
                 <div *ngFor="let category of jobCategories" class="card">
                     <div class="card-body">
-                      <h5 class="card-title">{{ category.name }}</h5>
+                      <h5 class="card-title text-center">{{ category.name }}</h5>
                       <div class="card-text">
                         <ul>
                           <li *ngFor="let item of category.displayedItems">
@@ -42,16 +42,58 @@
                           <a *ngIf="category.remainingItems.length > 0" (click)="showMore(category)">Show More.....</a>
                         </ul>
                       </div>
-                      <button>APPLY NOW</button>
+                      <button type="button" (click)="openForm()">APPLY NOW</button>
                     </div>
                     <div class="card-footer">
                       <small class="text-muted">Last updated recent</small>
                     </div>
                   </div>        
               </div>
-        </div>
+        </div>     
     </section>
     <footer>
         <app-footer></app-footer>
     </footer>
 </div>
+<ng-template #exampleModalCenter>
+  <div class="modal-body">
+    <div class="close" (click)="modal.dismissAll()" aria-label="close"><div class="btn-close"></div></div>
+    <h3 class="mb-3">Job Application Form</h3>
+      <form name="cvForm" #cvForm ="ngForm" (ngSubmit)="submit(cvForm)" novalidate>
+        <div class="row">
+             <div class="col-6">
+                 <div class="py-1 d-grid">
+                     <mat-form-field appearance="legacy">
+                         <mat-label>Enter your Email</mat-label>
+                         <input matInput [(ngModel)]="email" name="email" required>
+                       </mat-form-field>
+                 </div>
+             </div>
+             <div class="col-6">
+              <div class="py-1 d-grid">
+              <mat-form-field appearance="legacy">
+                 <mat-label>Yours Interest</mat-label>
+                 <mat-select name="category" [(ngModel)]="category" required>
+                   <mat-option value="frontend">Front-End Developer</mat-option>
+                   <mat-option value="backend">Backend Developer</mat-option>
+                   <mat-option value="graphic">Graphic Designer</mat-option>
+                   <mat-option value="nodejs">Node js Developer</mat-option>
+                   <mat-option value="mean">MEAN Developer</mat-option>
+                 </mat-select>
+               </mat-form-field>
+             </div>
+            </div>
+        </div>
+        <div class="row">
+          <div class="alignment pb-3" style="background-color: aliceblue; border-radius: 20px;">
+          <img src="assets/images/upload.png" alt="" class="img-fluid" style="width: 40%;">
+          <div class="mb-3 alignment">
+            <label for="formFileSm" class="form-label">Drop Your CV</label>
+            <input class="form-control form-control-sm" name="file" required type="file" (change)="fileUpdated($event)">
+          </div>
+          </div>
+        </div>
+        <button type="submit" class="w-50" style="font-size: x-large;">Submit</button>     
+      </form>
+    </div>
+  </ng-template>
