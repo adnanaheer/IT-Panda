@@ -65,7 +65,7 @@
                  <div class="py-1 d-grid">
                      <mat-form-field appearance="legacy">
                          <mat-label>Enter your Email</mat-label>
-                         <input matInput [(ngModel)]="email" name="email" required>
+                         <input matInput autocomplete="off" [(ngModel)]="email" name="email" required>
                        </mat-form-field>
                  </div>
              </div>
@@ -74,11 +74,11 @@
               <mat-form-field appearance="legacy">
                  <mat-label>Yours Interest</mat-label>
                  <mat-select name="category" [(ngModel)]="category" required>
-                   <mat-option value="frontend">Front-End Developer</mat-option>
-                   <mat-option value="backend">Backend Developer</mat-option>
-                   <mat-option value="graphic">Graphic Designer</mat-option>
-                   <mat-option value="nodejs">Node js Developer</mat-option>
-                   <mat-option value="mean">MEAN Developer</mat-option>
+                   <mat-option value="Frontend Developer">Front-End Developer</mat-option>
+                   <mat-option value="Backend Developer">Backend Developer</mat-option>
+                   <mat-option value="Graphic Designer">Graphic Designer</mat-option>
+                   <mat-option value="NodeJs Developer">Node js Developer</mat-option>
+                   <mat-option value="Mean Developer">MEAN Developer</mat-option>
                  </mat-select>
                </mat-form-field>
              </div>
@@ -93,7 +93,14 @@
           </div>
           </div>
         </div>
-        <button type="submit" class="w-50" style="font-size: x-large;">Submit</button>     
+        <button type="submit" class="w-50" style="font-size: x-large;">Submit</button>   
+        <div  *ngIf="success">
+          <div class="toast show" [ngClass]="response === 'Email Sent Successfully' ? 'bg-success' : 'bg-danger'" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-body text-white text-center" >
+              {{response}}
+            </div>
+          </div>
+        </div>  
       </form>
     </div>
   </ng-template>

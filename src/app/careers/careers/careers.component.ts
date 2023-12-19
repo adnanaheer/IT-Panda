@@ -22,9 +22,11 @@ export class CareersComponent implements OnInit {
   email: string
   modalRef: NgbModalRef;
   selectedFile: File | null = null;
+  success : boolean = false
+  response: string
   @ViewChild('exampleModalCenter') applyNow: any;
-  @ViewChild('cvForm') cvForm : NgForm  
-  constructor(public modal : NgbModal, private career: career ) {}
+  @ViewChild('cvForm') cvForm: NgForm
+  constructor(public modal: NgbModal, private career: career) { }
 
   ngOnInit(): void {
     this.jobCategories = [
@@ -83,8 +85,8 @@ export class CareersComponent implements OnInit {
           'Design and implement scalable and secure RESTful APIs.',
           'Work closely with front-end developers to integrate user-facing elements with server-side logic.',
           'Troubleshoot, debug, and resolve software defects and issues.',
-          'Keep up-to-date with emerging technologies and industry trends.'        
-            ],
+          'Keep up-to-date with emerging technologies and industry trends.'
+        ],
         displayedItems: [],
         remainingItems: []
       }
@@ -118,30 +120,44 @@ export class CareersComponent implements OnInit {
   }
 
   openForm() {
-   this.modalRef= this.modal.open(this.applyNow,{
+    this.modalRef = this.modal.open(this.applyNow, {
       animation: true,
       centered: true,
       size: 'md'
     })
   }
 
-  submit(f: NgForm){
-   if(f.valid && this.selectedFile){
-    console.log(this.category, this.email, this.selectedFile)
-    const formData = new FormData();
+  submit(f: NgForm) {
+    if (f.valid && this.selectedFile) {
+      console.log(this.category, this.email, this.selectedFile)
+      const formData = new FormData();
       formData.append('email', this.email);
       formData.append('category', this.category);
       formData.append('attachment', this.selectedFile);
-    this.career.dropCv(formData).subscribe(
-      res => console.log(res)
-    )
-   }
+      this.career.dropCv(formData).subscribe(
+        (res) => {
+         this.success = true
+         this.response = res.message
+         setTimeout(()=>{
+          f.resetForm();
+           this.modalRef.close()
+           this.success = false
+         },1000)
+        }
+      )
+    }
+    else {
+      this.success = true
+      this.response = "Please fill all Fields"
+      setTimeout(()=>{
+        this.success = false
+      },1000)
+    }
   }
-  fileUpdated(event: any){
+  fileUpdated(event: any) {
     const inputElement = event.target;
     if (inputElement.files && inputElement.files.length > 0) {
       this.selectedFile = inputElement.files[0];
-      console.log('Selected File:', this.selectedFile);
     }
   }
 }
