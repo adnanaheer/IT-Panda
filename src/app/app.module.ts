@@ -41,6 +41,9 @@ import { WebsitedesignPortfolioComponent } from './portfolio/websitedesign-portf
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import {MatSelectModule} from '@angular/material/select';
+import { CareersComponent } from './careers/careers/careers.component';
+import { FormsModule } from '@angular/forms'; 
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -80,8 +83,11 @@ import {MatSelectModule} from '@angular/material/select';
     MobappdevelopmentPortfolioComponent,
     SoftwaredevelopmentPortfolioComponent,
     WebsitedesignPortfolioComponent,
+    CareersComponent,
   ],
   imports: [
+    HttpClientModule,
+    FormsModule,
     MatSelectModule,
     MatButtonModule,
     MatInputModule,

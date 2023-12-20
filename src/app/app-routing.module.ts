@@ -15,7 +15,7 @@ import { MobappdevelopmentComponent } from './services/mobappdevelopment/mobappd
 import { ReactComponent } from './services/react/react.component'
 import { SoftwaredevelopmentComponent } from './services/softwaredevelopment/softwaredevelopment.component'
 import { WebdesignComponent } from './services/webdesign/webdesign.component'
-
+import { CareersComponent } from './careers/careers/careers.component';
 
 const routes: Routes = [
   {
@@ -41,6 +41,10 @@ const routes: Routes = [
   {
     path: 'service',
     component: ServicesComponent
+  },
+  {
+    path: 'careers',
+    component: CareersComponent
   },
   {
     path: 'service/angular',
