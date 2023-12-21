@@ -17,19 +17,13 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     background-color:#0dcaf0 ;
     border-radius: 140px 140px 0 0 ;
-    height: 65vh;
-    position: relative;
     animation: zoomAnimation 1.5s ease-in-out;
     .img {
         overflow: hidden;
-        width: 60%;
-        height: 20vh;
+        width: 85%;
         border-radius: 150px;
-        top: 4px;
-        position: absolute;
         background-color: white;
         margin: 15px 0;
         img{
@@ -39,8 +33,7 @@
     .member-text{
         color: white;
         padding: 0 12px 12px;
-        top: 209px;
-        position: absolute;
+        margin-top: 20px;
     }
 }
 @keyframes zoomAnimation {
@@ -60,14 +53,21 @@
         flex-direction: column;
         margin: 30px 0;
         text-align: center;
-        gap: 180px;
+        gap: 61px;
         width: 71%;
     }
     .member-card {
-        height: 52vh;
         font-size: 12px;
-        .member-text{
-            top: 189px;
+        
+    }
+}
+    @media only screen and (min-width:1200px) {
+        .members {
+            width: 68%;
         }
+}
+@media only screen and (min-width:1400px) {
+    .members {
+        width: 53%;
     }
 }
