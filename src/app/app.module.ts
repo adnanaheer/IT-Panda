@@ -44,6 +44,7 @@ import {MatSelectModule} from '@angular/material/select';
 import { CareersComponent } from './careers/careers/careers.component';
 import { FormsModule } from '@angular/forms'; 
 import { HttpClientModule } from '@angular/common/http';
+import { TeamComponent } from './team/team.component';
 
 
 
@@ -84,6 +85,7 @@ import { HttpClientModule } from '@angular/common/http';
     SoftwaredevelopmentPortfolioComponent,
     WebsitedesignPortfolioComponent,
     CareersComponent,
+    TeamComponent,
   ],
   imports: [
     HttpClientModule,

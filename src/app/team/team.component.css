@@ -1,0 +1,73 @@
+.team {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+ 
+.members {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 70px;
+    margin: 30px 0;
+    text-align: center;
+    width: 82%;
+}
+.member-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color:#0dcaf0 ;
+    border-radius: 140px 140px 0 0 ;
+    animation: zoomAnimation 1.5s ease-in-out;
+    .img {
+        overflow: hidden;
+        width: 85%;
+        border-radius: 150px;
+        background-color: white;
+        margin: 15px 0;
+        img{
+            width: 100%;
+        }
+    }
+    .member-text{
+        color: white;
+        padding: 0 12px 12px;
+        margin-top: 20px;
+    }
+}
+@keyframes zoomAnimation {
+    0% {
+        transform: scale(0.6); /* Initial zoom-out state */
+    }
+    50% {
+        transform: scale(1); /* Zoomed-in state */
+    }
+    100% {
+        transform: scale(1); /* Zoomed-in state */
+    }
+}
+@media only screen and (min-width:320px) and (max-width:425px) {
+    .members {
+        display: flex;
+        flex-direction: column;
+        margin: 30px 0;
+        text-align: center;
+        gap: 61px;
+        width: 71%;
+    }
+    .member-card {
+        font-size: 12px;
+        
+    }
+}
+    @media only screen and (min-width:1200px) {
+        .members {
+            width: 68%;
+        }
+}
+@media only screen and (min-width:1400px) {
+    .members {
+        width: 53%;
+    }
+}

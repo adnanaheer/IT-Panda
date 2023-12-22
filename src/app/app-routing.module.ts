@@ -16,7 +16,7 @@ import { ReactComponent } from './services/react/react.component'
 import { SoftwaredevelopmentComponent } from './services/softwaredevelopment/softwaredevelopment.component'
 import { WebdesignComponent } from './services/webdesign/webdesign.component'
 import { CareersComponent } from './careers/careers/careers.component';
-
+import { TeamComponent } from './team/team.component';
 const routes: Routes = [
   {
     path: '',
@@ -29,6 +29,10 @@ const routes: Routes = [
   {
     path: 'about',
     component: AboutUsComponent
+  },
+  {
+    path: 'Team',
+    component: TeamComponent
   },
   {
     path: 'contact',
