@@ -69,9 +69,8 @@
     
       <!-- section 4-->
      <section class="py-5">
-        <h2 class="text-center text-gradient">EXPLORE OUR PORTFOLIO</h2>
-        <p class="col-10 col-md-6 col-lg-5 text-center mx-auto mt-4">Lorem ipsum dolor sit amet consectetur adipisicing
-         elit. Eos accusantium eligendi qui cumque vitae illo quae laborum officiis, excepturi.</p>
+        <h2 class="text-center text-gradient mb-3">EXPLORE OUR PORTFOLIO</h2>
+        
     
          <div class="d-flex justify-content-center flex-wrap pb-2">
             <button (click)="activeSection = 'mainport1'" [ngClass]="activeSection === 'mainport1' ? 'active' : ''" class="btn btn-outline-primary px-3 p-2 m-1 btnradius">ANGULAR PROJECTS</button>
@@ -101,68 +100,10 @@
      
     <!-- section 6-->
     <section class="py-4 contact">
-        <div class="container">
-                <div class="row m-4">
-                    <div class="col-11 col-md-10 col-lg-8 col-xl-8 pt-4 mx-auto">
-                        <h1 class="text-gradient">Contact Us</h1>
-                        <form>
-                           <div class="row">
-                                <div class="col-12">
-                                    <div class="py-1 d-grid">
-                                        <mat-form-field appearance="legacy">
-                                            <mat-label>Enter your Name</mat-label>
-                                            <input matInput required>
-                                          </mat-form-field>
-                                    </div>
-                                </div>
-                                <div class="col-6">
-                                    <div class="py-1 d-grid">
-                                        <mat-form-field appearance="legacy">
-                                            <mat-label>Enter your Phone Number</mat-label>
-                                            <input matInput required>
-                                          </mat-form-field>
-                                    </div>
-                                </div>
-                                <div class="col-6">
-                                    <div class="py-1 d-grid">
-                                        <mat-form-field appearance="legacy">
-                                            <mat-label>Enter your Email</mat-label>
-                                            <input matInput required>
-                                          </mat-form-field>
-                                    </div>
-                                </div>
-                                <mat-form-field appearance="legacy">
-                                    <mat-label>Yours Interest</mat-label>
-                                    <mat-select>
-                                      <mat-option value="one">Angular</mat-option>
-                                      <mat-option value="two">React</mat-option>
-                                      <mat-option value="one">Content Management System</mat-option>
-                                      <mat-option value="two">Digital Marketing</mat-option>
-                                      <mat-option value="one">ERP</mat-option>
-                                      <mat-option value="two">Graphic Designing</mat-option>
-                                      <mat-option value="one">Landing Page</mat-option>
-                                      <mat-option value="two">Mob Application Development</mat-option>
-                                      <mat-option value="one">Software Development</mat-option>
-                                      <mat-option value="two">UI Designing</mat-option>
-                                    </mat-select>
-                                  </mat-form-field>
-                                </div>
-                                <div class="row">
-                                    <div class="col-10 d-grid">
-                                        <mat-form-field class="example-full-width" appearance="legacy">
-                                            <mat-label>Leave a comment</mat-label>
-                                            <textarea matInput></textarea>
-                                        </mat-form-field> 
-                                    </div>
-                                    <div class="col-1 pt-4">
-                                        <button mat-raised-button color="primary">Submit</button>     
-                                    </div> 
-                                </div>
-                            </form>
-                        </div>
-                        </div>
-                    </div>
-                </section>
+        <div class="d-flex flex-row align-items-center justify-content-center">
+            <button class="button" routerLink="/contact">Contact Us</button>
+        </div>
+    </section>
             <!-- section 6 End--> 
             <app-forcepagetop></app-forcepagetop>
             <!--Footer Start-->

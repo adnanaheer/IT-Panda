@@ -6,6 +6,15 @@
     border-radius: 20px;
 }
 
+.button{
+    width: 15%;
+    height: 5vh;
+    border-radius: 20px;
+    background: linear-gradient(rgb(55, 52, 52), rgb(7, 121, 243));
+    border: none;
+    color: white;
+}
+
 .radius:hover{
     transform: scale(1.05);
     transition: 0.5s all linear;
