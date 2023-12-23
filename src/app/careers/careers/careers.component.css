@@ -8,6 +8,10 @@
     align-items: center;
     justify-content: center;
 }
+.join{
+    transition: transform 0.5s ease-in-out;
+    animation: zoomAnimation 1.5s ease-in-out;
+}
 
 h3 {
     color: -webkit-linear-gradient(rgb(55, 52, 52), rgb(7, 121, 243));
@@ -145,6 +149,6 @@ button:hover{
         transform: scale(1); /* Zoomed-in state */
     }
     100% {
-        transform: scale(1); /* Zoomed-in state */
+        transform: translateX(20px) 
     }
 }

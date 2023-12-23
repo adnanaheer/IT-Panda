@@ -22,7 +22,7 @@
     flex-direction: row;
     align-items: center;
     background-color:#0dcaf0 ;
-    animation: zoomAnimation 1.5s ease-in-out;
+    animation: zoomAnimation 0.5s ease;
     .img {
         overflow: hidden;
         width: 28%;
@@ -42,13 +42,13 @@
 }
 @keyframes zoomAnimation {
     0% {
-        transform: scale(0.6); /* Initial zoom-out state */
+        transform: translateX(150px); 
     }
     50% {
-        transform: scale(1); /* Zoomed-in state */
+        transform: translateX(60px); 
     }
     100% {
-        transform: scale(1); /* Zoomed-in state */
+        transform: translateX(10px); 
     }
 }
 @media only screen and (min-width:320px) and (max-width:425px) {
