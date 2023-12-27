@@ -1,3 +1,16 @@
 h5 {
     color: #27AAE1;
 }
+
+.fa-ul {
+    margin: 0;
+}
+
+@media only screen and (max-width:768px) {
+    .fa-ul {
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
