@@ -1,28 +1,37 @@
-nav{
+nav {
     color: whitesmoke;
     box-shadow: 2px 2px 2px rgb(228, 228, 228);
 }
 
-.sub-menu-1{
+.sub-menu-1 {
     display: none;
 }
 
-.fa-angle-right{
+.fa-angle-right {
     color: black;
     float: right;
 }
 
-.menu-bar ul li:hover .sub-menu-1{
+.menu-bar ul li:hover .sub-menu-1 {
     display: block;
     position: absolute;
-    background: url('https://i.pinimg.com/originals/f2/0a/ee/f20aee4870e602cd95ecd99d87c81ef3.jpg') center/cover no-repeat;
+    background: white;
+    border: 1px solid;
 }
 
-.menu-bar ul li:hover .sub-menu-1 ul{
+.sub-menu-1 a {
+    color: #6c757d;
+}
+
+.sub-menu-1 a:hover {
+    color: #27AAE1;
+}
+
+.menu-bar ul li:hover .sub-menu-1 ul {
     margin-right: 24px;
 }
 
-.menu-bar ul li:hover .sub-menu-1 li{
+.menu-bar ul li:hover .sub-menu-1 li {
     width: 182px;
     padding: 10px;
     border-bottom: 1px dotted black;
@@ -30,26 +39,27 @@ nav{
     border-radius: 0;
 }
 
-.menu-bar ul li:hover .sub-menu-1 li:last-child{
+.menu-bar ul li:hover .sub-menu-1 li:last-child {
     border-bottom: none;
 }
 
-.sub-menu-2{
+.sub-menu-2 {
     display: none;
 }
 
-.text-color{
+.text-color {
     color: #6c757d;
 }
-.text-color:hover{
-color: #0dcaf0 ;
+
+.text-color:hover {
+    color: #27AAE1;
 }
 
-.hover-me:hover .sub-menu-2{
+.hover-me:hover .sub-menu-2 {
     position: absolute;
     display: block;
     margin-top: -35px;
     margin-left: 174px;
-    background: url('https://i.pinimg.com/originals/f2/0a/ee/f20aee4870e602cd95ecd99d87c81ef3.jpg') center/cover no-repeat;
+    background: white;
+    border: 1px solid;
 }
-

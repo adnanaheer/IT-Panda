@@ -1,73 +1,73 @@
-.Servy{
+.Servy {
     background: url('../../../assets/images/services.jpg') center/cover fixed no-repeat;
 }
 
-.bgimg{
+.bgimg {
     border-radius: 10px;
-    background: linear-gradient(to right, rgb(38, 38, 38), rgba(172, 226, 223, 0),rgb(46, 46, 46)),  url('../../../assets/images/formbg.gif') center/cover;
+    background: linear-gradient(to right, rgb(38, 38, 38), rgba(172, 226, 223, 0), rgb(46, 46, 46)), url('../../../assets/images/formbg.gif') center/cover;
 }
 
-.subscribe{
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('../../../assets/images/office sub.jpg') center/cover fixed no-repeat;
+.subscribe {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../../../assets/images/office sub.jpg') center/cover fixed no-repeat;
 }
 
-.iconsize{
+.iconsize {
     font-size: 30px;
 }
 
-.radius{
+.radius {
     border-radius: 10px;
 }
 
-.btn-radius{
+.btn-radius {
     border-radius: 50px;
 }
 
 
-.btn-radius:hover{
+.btn-radius:hover {
     transform: scale(1.09);
     transition: 0.5s all linear;
 }
 
-.radius{
+.radius {
     border-radius: 20px;
     box-shadow: 4px 4px 4px rgb(186, 186, 186);
 }
 
-.radi{
+.radi {
     border-radius: 20px;
     box-shadow: 4px 4px 4px rgb(186, 186, 186);
 }
 
-.radi:hover{
+.radi:hover {
     transform: scale(0.8);
     transition: 0.7s all linear;
 
 }
 
-.radius:hover{
+.radius:hover {
     transform: scale(1.05);
     transition: 0.5s all linear;
 }
 
-.imgscale:hover{
+.imgscale:hover {
     transform: scale(1.5);
     transition: 0.6s all linear;
     border-radius: 20px;
     box-shadow: 4px 4px 4px rgb(186, 186, 186);
 }
 
-.paracolor:hover{
-    color: rgb(24, 144, 237);
+.paracolor:hover {
+    color: #27AAE1;
     transition: 0.7s all linear;
 }
 
-.icontransform:hover{
+.icontransform:hover {
     transform: rotate(360deg);
     transition: 0.5s all linear;
 }
 
-.text-justify{
+.text-justify {
     text-align: justify;
 }
 

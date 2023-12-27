@@ -1,13 +1,34 @@
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-.text-justify{text-align: justify;}
-a{text-decoration: none;}
-.text-gradient{
-    background: -webkit-linear-gradient(rgb(55, 52, 52), rgb(7, 121, 243));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-  .cdk-global-overlay-wrapper, .cdk-overlay-container { z-index: 9999!important; } 
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+a {
+  text-decoration: none;
+  color: #27AAE1;
+  cursor: pointer;
+}
+
+.text-gradient {
+  background: -webkit-linear-gradient(rgb(55, 52, 52), rgb(7, 121, 243));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.cdk-global-overlay-wrapper,
+.cdk-overlay-container {
+  z-index: 9999 !important;
+}
+
 #loader {
   bottom: 0;
   height: 175px;
