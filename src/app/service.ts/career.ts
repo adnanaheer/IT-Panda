@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class career {
-  private apiUrl = 'http://localhost:3000'; // Replace with your API endpoint
+  private apiUrl = 'https://itpanda.netlify.app/.netlify/functions/api'; // Replace with your API endpoint
 
   constructor(private http: HttpClient) {}
 
