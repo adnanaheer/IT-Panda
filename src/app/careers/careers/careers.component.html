@@ -38,7 +38,7 @@
   <section>
     <div class="open-position row my-4">
       <h3 class="text-gradient text-center"> Open Positions</h3>
-      <div *ngFor="let category of jobCategories" class="card col-6 col-lg-3">
+      <div *ngFor="let category of jobCategories" class="card col-10 col-md-5 col-lg-3">
         <div class="card-body d-flex flex-column justify-content-between">
           <div class="card-text">
             <h5 class="card-title mb-3">{{ category.name }}</h5>
@@ -69,17 +69,17 @@
     <h3 class="mb-3">Job Application Form</h3>
     <form name="cvForm" #cvForm="ngForm" (ngSubmit)="submit(cvForm)" novalidate>
       <div class="row">
-        <div class="col-6">
+        <div class="col-6 mx-auto">
           <div class="py-1 d-grid">
-            <mat-form-field appearance="legacy">
+            <mat-form-field >
               <mat-label>Enter your Email</mat-label>
               <input matInput autocomplete="off" [(ngModel)]="email" name="email" required>
             </mat-form-field>
           </div>
         </div>
-        <div class="col-6">
+        <div class="col-5 mx-auto">
           <div class="py-1 d-grid">
-            <mat-form-field appearance="legacy">
+            <mat-form-field >
               <mat-label>Yours Interest</mat-label>
               <mat-select name="category" [(ngModel)]="category" required>
                 <mat-option value="Frontend Developer">Front-End Developer</mat-option>
