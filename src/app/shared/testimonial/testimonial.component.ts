@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { OwlOptions } from 'ngx-owl-carousel-o';
+import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
 
 @Component({
   selector: 'app-testimonial',
   templateUrl: './testimonial.component.html',
-  styleUrls: ['./testimonial.component.css']
+  styleUrls: ['./testimonial.component.css'],
+  standalone: true,
+  imports: [CarouselModule]
 })
 export class TestimonialComponent implements OnInit {
   constructor() { }

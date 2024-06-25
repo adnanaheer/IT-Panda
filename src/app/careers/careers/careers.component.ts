@@ -1,7 +1,12 @@
+import { CommonModule } from '@angular/common';
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { FormsModule, NgForm } from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
 import { NgbModalRef, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { FooterComponent } from 'src/app/footer/footer.component';
 import { career } from 'src/app/service.ts/career';
+import {MatInputModule} from '@angular/material/input'
 interface JobCategory {
   name: string;
   items: string[];
@@ -13,6 +18,8 @@ interface JobCategory {
   selector: 'app-careers',
   templateUrl: './careers.component.html',
   styleUrls: ['./careers.component.css'],
+  standalone:true,
+  imports: [CommonModule,MatSelectModule,FormsModule,FooterComponent,MatFormFieldModule, MatInputModule ]
 })
 export class CareersComponent implements OnInit {
   isCollapsed: boolean;
