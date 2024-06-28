@@ -38,23 +38,29 @@
   <section>
     <div class="open-position row my-4">
       <h3 class="text-gradient text-center"> Open Positions</h3>
-      <div *ngFor="let category of jobCategories" class="card col-6 col-lg-3">
-        <div class="card-body d-flex flex-column justify-content-between">
-          <div class="card-text">
-            <h5 class="card-title mb-3">{{ category.name }}</h5>
-            <ul>
-              <li *ngFor="let item of category.displayedItems" class="text-lines">
-                {{ item }}
-              </li>
-              <a *ngIf="category.remainingItems.length > 0" (click)="showMore(category)">Show More.....</a>
-            </ul>
+      @for(category of jobCategories; track category.name){
+        <div class="card col-10 col-md-5 col-lg-3">
+          <div class="card-body d-flex flex-column justify-content-between">
+            <div class="card-text">
+              <h5 class="card-title mb-3">{{ category.name }}</h5>
+              <ul>
+                @for(item of category.displayedItems; track item){
+                  <li class="text-lines">
+                    {{ item }}
+                  </li>
+                }
+                @if(category.remainingItems.length > 0) {
+                <a  (click)="showMore(category)">Show More.....</a>
+                }
+              </ul>
+            </div>
+            <button type="button" (click)="openForm()">APPLY NOW</button>
           </div>
-          <button type="button" (click)="openForm()">APPLY NOW</button>
+          <div class="card-footer">
+            <small class="text-muted">Last updated recent</small>
+          </div>
         </div>
-        <div class="card-footer">
-          <small class="text-muted">Last updated recent</small>
-        </div>
-      </div>
+      }
     </div>
   </section>
   <footer>
@@ -69,17 +75,17 @@
     <h3 class="mb-3">Job Application Form</h3>
     <form name="cvForm" #cvForm="ngForm" (ngSubmit)="submit(cvForm)" novalidate>
       <div class="row">
-        <div class="col-6">
+        <div class="col-6 mx-auto">
           <div class="py-1 d-grid">
-            <mat-form-field appearance="legacy">
+            <mat-form-field >
               <mat-label>Enter your Email</mat-label>
               <input matInput autocomplete="off" [(ngModel)]="email" name="email" required>
             </mat-form-field>
           </div>
         </div>
-        <div class="col-6">
+        <div class="col-5 mx-auto">
           <div class="py-1 d-grid">
-            <mat-form-field appearance="legacy">
+            <mat-form-field >
               <mat-label>Yours Interest</mat-label>
               <mat-select name="category" [(ngModel)]="category" required>
                 <mat-option value="Frontend Developer">Front-End Developer</mat-option>
@@ -102,7 +108,8 @@
         </div>
       </div>
       <button type="submit" class="w-50" style="font-size: x-large;">Submit</button>
-      <div *ngIf="success">
+      @if(success){
+      <div>
         <div class="toast show" [ngClass]="response === 'Email Sent Successfully' ? 'bg-success' : 'bg-danger'"
           role="alert" aria-live="assertive" aria-atomic="true">
           <div class="toast-body text-white text-center">
@@ -110,6 +117,7 @@
           </div>
         </div>
       </div>
+    }
     </form>
   </div>
 </ng-template>

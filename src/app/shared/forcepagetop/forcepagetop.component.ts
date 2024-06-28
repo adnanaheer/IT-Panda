@@ -3,7 +3,9 @@ import { Component, OnInit ,HostListener } from '@angular/core';
 @Component({
   selector: 'app-forcepagetop',
   templateUrl: './forcepagetop.component.html',
-  styleUrls: ['./forcepagetop.component.css']
+  styleUrls: ['./forcepagetop.component.css'],
+  standalone: true
+
 })
 export class ForcepagetopComponent implements OnInit {
   ngOnInit(): void { }

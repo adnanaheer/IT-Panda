@@ -80,27 +80,41 @@
           <button (click)="activeSection = 'landingpage-portfolio'" [ngClass]="activeSection === 'landingpage-portfolio' ? 'active' : ''" class="btn btn-outline-primary px-3 p-2 m-1 btnradius">LANDING PAGE</button>
           <button (click)="activeSection = 'softwaredevelopment-portfolio'" [ngClass]="activeSection === 'softwaredevelopment-portfolio' ? 'active' : ''" class="btn btn-outline-primary px-3 p-2 m-1 btnradius">SOFTWARE DEVELOPMENT</button>
       </div>
-        <ng-container *ngIf="activeSection === 'angular-portfolio'">
+      @if(activeSection === 'angular-portfolio'){
+        <ng-container>
           <app-angular-portfolio></app-angular-portfolio>
         </ng-container>
-        <ng-container *ngIf="activeSection === 'digitalmarketing-portfolio'">
+      }
+      @if(activeSection === 'digitalmarketing-portfolio'){
+        <ng-container>
           <app-digitalmarketing-portfolio></app-digitalmarketing-portfolio>
         </ng-container>
-        <ng-container *ngIf="activeSection === 'graphicdesign-portfolio'">
+      }
+      @if(activeSection === 'graphicdesign-portfolio'){
+        <ng-container>
           <app-graphicdesign-portfolio></app-graphicdesign-portfolio>
         </ng-container>
-        <ng-container *ngIf="activeSection === 'landingpage-portfolio'">
+      }
+      @if(activeSection === 'landingpage-portfolio'){
+        <ng-container>
           <app-landingpage-portfolio></app-landingpage-portfolio>
         </ng-container>
-        <ng-container *ngIf="activeSection === 'react-portfolio'">
+      }
+      @if(activeSection === 'react-portfolio'){
+        <ng-container>
           <app-react-portfolio></app-react-portfolio>
         </ng-container>
-        <ng-container *ngIf="activeSection === 'softwaredevelopment-portfolio'">
+      }
+      @if(activeSection === 'softwaredevelopment-portfolio'){
+        <ng-container>
           <app-softwaredevelopment-portfolio></app-softwaredevelopment-portfolio>
         </ng-container>
-        <ng-container *ngIf="activeSection === 'websitedesign-portfolio'">
+      }
+      @if(activeSection === 'websitedesign-portfolio'){
+        <ng-container>
           <app-websitedesign-portfolio></app-websitedesign-portfolio>
         </ng-container>
+      }
       </div>
   </section>
   <!-- Section 2 End -->

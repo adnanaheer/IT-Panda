@@ -33,14 +33,13 @@
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css",
-              "node_modules/bootstrap/js/dist/carousel.js",
-              "node_modules/bootstrap/js/src/collapse.js",
-              "node_modules/bootstrap/js/dist/button.js",
-              "node_modules/bootstrap/js/src/dropdown.js",
               "node_modules/ngx-owl-carousel-o/lib/styles/prebuilt-themes/owl.carousel.min.css",
               "node_modules/ngx-owl-carousel-o/lib/styles/prebuilt-themes/owl.theme.default.min.css"
             ],
             "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/popper.js/dist/umd/popper.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
             ]
           },
           "configurations": {
@@ -80,10 +79,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "MyWebsite:build:production"
+              "buildTarget": "MyWebsite:build:production"
             },
             "development": {
-              "browserTarget": "MyWebsite:build:development"
+              "buildTarget": "MyWebsite:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -91,7 +90,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "MyWebsite:build"
+            "buildTarget": "MyWebsite:build"
           }
         },
         "test": {
@@ -107,7 +106,7 @@
             ],
             "styles": [
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
-              "src/styles.css"
+                "src/styles.css"
             ],
             "scripts": []
           }
@@ -132,13 +131,15 @@
             "development": {
               "optimization": false,
               "sourceMap": true,
-              "extractLicenses": false
+              "extractLicenses": false,
+              "vendorChunk": true,
+              "buildOptimizer": false
             }
           },
           "defaultConfiguration": "production"
         },
         "serve-ssr": {
-          "builder": "@nguniversal/builders:ssr-dev-server",
+          "builder": "@angular-devkit/build-angular:ssr-dev-server",
           "configurations": {
             "development": {
               "browserTarget": "MyWebsite:build:development",
@@ -152,7 +153,7 @@
           "defaultConfiguration": "development"
         },
         "prerender": {
-          "builder": "@nguniversal/builders:prerender",
+          "builder": "@angular-devkit/build-angular:prerender",
           "options": {
             "routes": [
               "/"
@@ -172,6 +173,5 @@
         }
       }
     }
-  },
-  "defaultProject": "MyWebsite"
+  }
 }
