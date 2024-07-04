@@ -163,6 +163,7 @@ export class CareersComponent implements OnInit {
     }
   }
   fileUpdated(event: any) {
+    this.selectedFile = null
     const inputElement = event.target;
     if (inputElement.files && inputElement.files.length > 0) {
       this.selectedFile = inputElement.files[0];
